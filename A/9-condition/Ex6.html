@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 6</title>
+</head>
+<body>
+  
+
+
+  <script>
+
+    let number = +prompt('Enter a number:');
+
+    if (isNaN(number)) {
+      alert('Invalid input');
+    }else if ((number % 2) === 0 && number > 10) {
+      alert('The entered number is even and greater than 10.');
+    }else if ((number % 2) === 0) {
+      alert('The entered number is even.')
+    }else {
+      alert('The entered number is odd.')
+    }
+  </script>
+
+</body>
+</html>

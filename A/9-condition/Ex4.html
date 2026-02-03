@@ -13,10 +13,10 @@
 
     if (isNaN(userScore)) {
       alert('Invalid input');
-    }else if (userScore <=0 || userScore > 20) {
-      alert('Invalid input');
+    }else if (userScore < 1 || userScore > 20) {
+      alert("Score must be between 1 and 20");
     }else if (userScore >= 15) {
-      alert('A Garde');
+      alert('A Grade');
     }else if (userScore >= 12) {
       alert('B Grade');
     }else {
