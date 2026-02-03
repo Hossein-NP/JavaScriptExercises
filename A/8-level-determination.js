@@ -41,22 +41,47 @@ let studentScore = +prompt("Please enter your score: ");
 // It's fully validated.
 
 let isNotValid = isNaN(studentScore);
-if (isNotValid === true) {
-  alert("The entered score can nat be a string.");
-}
-else {
-  if (studentScore > 20) {
-  alert("The score entered must be between 1 and 20.");
+// if (isNotValid === true) {
+//   alert("The entered score can nat be a string.");
+// }
+// else {
+//   if (studentScore > 20) {
+//   alert("The score entered must be between 1 and 20.");
+//   }
+//   else if (studentScore >= 15) {
+//     alert("Your Grade: A");
+//   } else if (studentScore >= 12) {
+//     alert("Your Grade: B");
+//   } else {
+//     if (studentScore <= 0) {
+//       alert("The score entered must be between 1 and 20.");
+//     }else {
+//       alert("Your Grade: C")
+//     }
+//   }
+// }
+
+//Way 4 >> switch case 
+//Not Recommend
+switch (true) {
+  case isNaN(studentScore): {
+    alert("The entered score can nat be a string.");
+    break;
   }
-  else if (studentScore >= 15) {
+  case (studentScore < 1 || studentScore > 20): {
+    alert("The score entered must be between 1 and 20.");
+    break;
+  }
+  case (studentScore >= 15): {
     alert("Your Grade: A");
-  } else if (studentScore >= 12) {
+    break;
+  }
+  case (studentScore >= 12): {
     alert("Your Grade: B");
-  } else {
-    if (studentScore <= 0) {
-      alert("The score entered must be between 1 and 20.");
-    }else {
-      alert("Your Grade: C")
-    }
+    break;
+  }
+  case (studentScore >= 1): {
+    alert("Your Grade: C");
+    break;
   }
 }

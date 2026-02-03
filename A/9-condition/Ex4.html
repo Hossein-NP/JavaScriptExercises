@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 4</title>
+</head>
+<body>
+  
+
+  <script>
+    let userScore = Number(prompt('User score:'));
+
+    if (isNaN(userScore)) {
+      alert('Invalid input');
+    }else if (userScore <=0 || userScore > 20) {
+      alert('Invalid input');
+    }else if (userScore >= 15) {
+      alert('A Garde');
+    }else if (userScore >= 12) {
+      alert('B Grade');
+    }else {
+      alert('C Grade');
+    }
+  </script>
+
+</body>
+</html>

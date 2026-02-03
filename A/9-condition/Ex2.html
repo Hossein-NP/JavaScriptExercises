@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 2</title>
+</head>
+<body>
+  
+
+  <script>
+
+    let userAge = Number(prompt("Please enter your age: ", 18))
+
+    if (isNaN(userAge)) {
+      alert("Invalid input");
+    }else {
+      switch(true) {
+        case userAge <= 0: {
+          alert("Invalid input");
+          break;
+        }
+        case userAge < 18: {
+          alert("Access denied");
+          break;
+        }
+        default: {
+          alert("Access granted");
+          break;
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>

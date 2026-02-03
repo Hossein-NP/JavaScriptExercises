@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 3</title>
+</head>
+<body>
+  
+
+  <script>
+
+    let userScore = +prompt('User score:');
+
+    // if (isNaN(userScore)) {
+    //   alert('Invalid input.');
+    // }else if (userScore >= 0 && userScore < 50) {
+    //   alert('F Grade');
+    // }else if (userScore >=50 && userScore <= 69) {
+    //   alert('C Grade');
+    // }
+    // else if (userScore >= 70 && userScore <= 89) {
+    //   alert('B Grade');
+    // }else if (userScore >= 90 && userScore <= 100) {
+    //   alert('A Grade');
+    // }else {
+    //   alert('Invalid input')
+    // }
+
+    // Improved version *****
+    if (isNaN(userScore)) {
+      alert('Invalid input.');
+    }else if (userScore < 0 || userScore > 100) {
+      alert('Invalid input.');
+    }else if (userScore >= 90) {
+      alert('A Grade');
+    }else if (userScore >= 70) {
+      alert('B Grade');
+    }else if (userScore >= 50) {
+      alert('C Grade');
+    }else {
+      alert('F Grade');
+    }
+
+  </script>
+
+</body>
+</html>
