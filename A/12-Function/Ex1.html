@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odd or Even</title>
+</head>
+<body>
+  
+  <script>
+    let number = +prompt("Enter Number:");
+
+    // =============== 
+
+    // function calc(num) {
+    //   if (num % 2 === 0) {
+    //     return "The entered number is Even.";
+    //   }else {
+    //     return "The entered number is Odd.";
+    //   }
+    // }
+
+    // =============== 
+
+  //     function calc(num) {
+  //   if (isNaN(num)) {
+  //     return "Invalid input";
+  //   }
+
+  //   if (num % 2 === 0) {
+  //     return "The entered number is Even.";
+  //   }
+
+  //   return "The entered number is Odd.";
+  // }
+
+    // =============== 
+
+    // function calc(num) {
+    //   if (isNaN(num)) return "Invalid input";
+    //   return num % 2 === 0 ? "Even" : "Odd";
+    // }
+
+    // =============== 
+
+    function calc(num) {
+
+      if (isNaN(num)) return "Invalid input";
+
+      if (!Number.isInteger(num)) {
+        return "Please enter an integer";
+      }
+
+      return num % 2 === 0 ? "Even" : "Odd";
+    }
+
+    let result = calc(number);
+    alert(result);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Absolute Value</title>
+</head>
+<body>
+  
+
+  <script>
+    let input = +prompt("Enter a number: ");
+
+    function absolute(value) {
+      if (isNaN(value)) {
+        return "Invalid input";
+      }else {
+        if (value < 0) {
+          return value * -1;
+        }else {
+          return value;
+        }
+      }
+    }
+    let result = absolute(input);
+    alert(result)
+  </script>
+
+</body>
+</html>

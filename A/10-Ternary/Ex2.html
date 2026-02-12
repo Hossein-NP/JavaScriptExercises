@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 2</title>
+</head>
+<body>
+  
+
+
+  <script>
+
+      // Method 1 
+    // let number = Number(prompt("Enter number:", 20));
+    // let result = isNaN(number) ? 'Invalid input' :
+    // number % 2 === 0 ? 'Even':
+    // 'Odd';
+
+    // alert(result)
+
+    // Method 2 
+    // For information only
+    // Attention: Cancel → 0 → Even 
+    //Resolve
+    let input = prompt("Enter number:");
+    let number = Number(input);
+
+    let result =
+    input === null || input.trim() === "" 
+    ? "Canceled or empty":
+    isNaN(number) 
+      ? "Invalid number"
+      :number % 2 === 0 
+        ? 'Even'
+        : 'Odd';
+
+    alert(result)
+
+  </script>
+
+</body>
+</html>

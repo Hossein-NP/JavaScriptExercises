@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi</title>
+</head>
+<body>
+  
+  <script>
+    let number_1 = Number(prompt("Enter first number:"));
+    let number_2 = prompt("Enter second number:");
+    let result = multi(number_1, Number(number_2));
+    alert(result);
+
+    function multi(num1, num2 = 1) {
+      if (isNaN(num1) || isNaN(num2)) {
+        return "Invalid input";
+      }
+      return num1 * num2;
+    }
+
+
+  </script>
+
+</body>
+</html>

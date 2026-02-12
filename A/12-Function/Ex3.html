@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Score</title>
+</head>
+<body>
+  
+
+  <script>
+    let score = +prompt("Enter your score: ");
+
+    function status(input) {
+      if(isNaN(input)) {
+        alert("The entered score is not valid.")
+      }else {
+        if (score >= 15) {
+          return "Excellent";
+        }else if (score >= 10) {
+          return "Average";
+        }else {
+          return "Fail";
+        }
+      }
+    }
+
+    let result = status(score);
+    alert(result)
+  </script>
+
+</body>
+</html>
