@@ -9,24 +9,24 @@
   
 
   <script>
+
     let score = +prompt("Enter your score: ");
 
     function status(input) {
-      if(isNaN(input)) {
-        alert("The entered score is not valid.")
-      }else {
-        if (score >= 15) {
-          return "Excellent";
-        }else if (score >= 10) {
-          return "Average";
-        }else {
-          return "Fail";
-        }
-      }
+
+      if(isNaN(input)) return "The entered score is not valid.";
+
+      // return input >=15 ? "Excellent" : input >=10 ? "Average" : "Fail"
+      
+      if (input >= 15) return "Excellent";
+      if (input >= 10) return "Average";
+      return "Fail";
+
     }
 
     let result = status(score);
     alert(result)
+
   </script>
 
 </body>

@@ -9,21 +9,23 @@
   
 
   <script>
+
     let input = +prompt("Enter a number: ");
 
     function absolute(value) {
-      if (isNaN(value)) {
-        return "Invalid input";
-      }else {
-        if (value < 0) {
-          return value * -1;
-        }else {
-          return value;
-        }
-      }
+
+      if (isNaN(value)) return "Invalid input";
+      if (value === null) return "Invalid input";
+
+
+      return value < 0
+             ? value * -1
+             : value;
+
     }
     let result = absolute(input);
-    alert(result)
+    alert(result);
+
   </script>
 
 </body>

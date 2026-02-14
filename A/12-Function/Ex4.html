@@ -9,18 +9,20 @@
   
 
   <script>
-    let stringInput = prompt("Enter a string:");
-    // console.log(stringInput, typeof stringInput)
 
-    function length(string) {
-     if (string === "") {
-        return "Empty string"
-      }else {
-        return string.length;
-      }
+    let stringInput = prompt("Enter a string:");
+    
+    function getLength(string) {
+     
+      if (string === null) return "Canceled";
+      if (string === "" || string.trim() === "") return "Empty String";
+      return string.length;
+
     }
-    let result = length(stringInput);
-    alert("String length is: " + result)
+
+    let result = getLength(stringInput);
+    alert(result);
+
   </script>
 
 </body>

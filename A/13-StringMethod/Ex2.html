@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Include</title>
+</head>
+<body>
+  
+
+  <script>
+
+    const word = prompt('Enter a word: ');
+    const sentence = prompt('Enter a sentence: ');
+    
+    function check(word, sentence) {
+
+      const lowWord = word.toLowerCase();
+      const lowsentence = sentence.toLowerCase();
+
+      if (lowWord === null || lowsentence === null) return "Input canceled";
+      if (lowWord === "" || lowsentence === "") return "Empty input";
+      
+      if (lowsentence.search(lowWord) === -1) {
+        return "کلمه مورد نظر داخل جمله نمی باشد.";
+      }else {
+        return "کلمه مورد نظر داخل جمله می باشد..";
+      }
+
+    }
+
+    alert(check(word, sentence))
+
+  </script>
+
+</body>
+</html>

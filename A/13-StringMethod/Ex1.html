@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+<body>
+  
+
+  <script>
+
+    const userName = prompt('Enter Username: ');
+    let lowerCaseName = userName.toLocaleLowerCase();
+
+    function register(name) {
+
+      if (name === null) return "Canceled";
+      if (name === "") return "Empty Username";
+      name.trim();
+      return name.includes("ali") ? "You are allowed to enter." : "You are not allowed to enter."
+
+    }
+
+    alert(register(lowerCaseName));
+
+  </script>
+
+</body>
+</html>
