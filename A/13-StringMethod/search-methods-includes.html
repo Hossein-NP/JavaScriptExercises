@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search methods - includes()</title>
+</head>
+<body>
+  
+  <script>
+    const userEmail = prompt("Please enter Email: ");
+    // console.log(userEmail)
+    
+    const Email = function(input) {
+
+      if (input === null) return "Canceled";
+      if (input.trim() === "") return "Input Empty!";
+
+      return input.includes("@") ? "The email entered is valid." : "The email entered is not valid.";
+      
+    }
+
+    alert(Email(userEmail))
+
+  </script>
+
+</body>
+</html>

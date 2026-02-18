@@ -10,21 +10,22 @@
 
   <script>
 
-    let input = +prompt("Enter a number: ");
+    let rawInput = prompt("Enter a number:");
 
     function absolute(value) {
 
-      if (isNaN(value)) return "Invalid input";
-      if (value === null) return "Invalid input";
+      if (value === null) return "Canceled";
 
+      let num = Number(value);
 
-      return value < 0
-             ? value * -1
-             : value;
+      if (isNaN(num)) return "Invalid input";
 
+      return num < 0 ? -num : num;
     }
-    let result = absolute(input);
+
+    let result = absolute(rawInput);
     alert(result);
+
 
   </script>
 
