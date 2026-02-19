@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search methods - lastIndexOf()</title>
+</head>
+<body>
+  
+  <script>
+
+    const sentence = prompt("Enter Sentence: ");
+
+    function searchCharacter(value) {
+
+      if (value === null) return "Canceled";
+      if (value.trim() === "") return "Input Empty";
+
+      const finalValue = value.trim();
+      
+      // return finalValue.lastIndexOf("a") === -1 ? "Not found!" : finalValue.lastIndexOf("a");
+
+      const lastCharacter = finalValue[finalValue.length - 1]
+      console.log(lastCharacter);
+
+      switch(true) {
+        case lastCharacter === "a": {
+          return `Character "a" found.Position: ${finalValue.lastIndexOf("a")}`;
+          // break;
+        }
+        case lastCharacter === "A": {
+          return `Character "A" found.Position: ${finalValue.lastIndexOf("A")}`;
+          // break;
+        }
+        default: {
+          return `Character not found.`;
+        }
+      }
+    }
+
+    alert(searchCharacter(sentence));
+
+  </script>
+
+
+</body>
+</html>

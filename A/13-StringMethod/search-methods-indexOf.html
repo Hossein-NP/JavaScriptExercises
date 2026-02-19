@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search methods - indexOf()</title>
+</head>
+<body>
+  
+  <script>
+
+    const sentence = prompt("Enter sentence: ");
+
+    function validSentence(input) {
+
+      if (input === null) return "Canceled";
+      if (input.trim() === "") return "Input Empty";
+
+      return input.indexOf(" ") === -1 ? "There is no 'Space'." : input.indexOf(" ");
+    }
+
+    alert(validSentence(sentence));
+
+  </script>
+
+
+</body>
+</html>
