@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regex</title>
+</head>
+<body>
+  
+  <script>
+    
+    const email = prompt("Enter valid email: ", "example@gmail.com");
+
+    function validateEmail(input) {
+      if (input === null) return "Canceled";
+      if (input.trim() === "" || input.trim() === "example@gmail.com") return "Input Empty";
+
+      // const emailPattern = /^\S+@\S+\.\S+$/;
+      // return emailPattern.test(input) ? "Valid email" : "Invalid email";
+
+      // The search method supports RegEx. 
+      return input.search(/^\S+@\S+\.\S+$/) === 0 ? "Valid email" : "Invalid email";
+    }
+
+    alert(validateEmail(email));
+
+  </script>
+
+
+</body>
+</html>

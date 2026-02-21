@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search methods - startWith()</title>
+</head>
+<body>
+  
+  <script>
+
+    const address = prompt("Enter your URL address: ");
+
+    function reviewerUrl(input) {
+      if (input === null) return "Canceled";
+      if (input.trim() === "") return "Input Empty";
+
+      if (input.startsWith("https")) {
+        return "The address is HTTPS."
+      }else {
+        return "The address is not HTTPS."
+      }
+    }
+    alert(reviewerUrl(address))
+  </script>
+
+
+</body>
+</html>
