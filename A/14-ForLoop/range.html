@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Range</title>
+</head>
+<body>
+  
+
+  <script>
+
+  /*⭐⭐⭐*/
+
+  /*🚀 Start*/
+
+  let firstNumber = +prompt("Please enter 'first' number: ");
+  let secondNumber = +prompt("Please enter 'second' number: ");
+  let flag = true;
+
+  // if (firstNumber === null) {
+  //   while (flag) {
+  //     firstNumber = prompt("Please enter 'valid' number(first number): ");
+  //     if (firstNumber === null || isNaN(firstNumber) || firstNumber === "0") {
+  //       flag = true;
+  //       alert("First Number Is Not Valid.Try Again.");
+  //       continue;
+  //     }
+  //     else {
+  //       flag = false;
+  //       alert("First Number Is Valid.");
+  //       continue;
+  //     }
+  //   }
+  // }
+
+  // if (secondNumber === null) {
+  //   while (flag) {
+  //     secondNumber = prompt("Please enter 'valid' number(second number): ");
+  //     if (secondNumber === null || isNaN(secondNumber) || secondNumber === "0") {
+  //       flag = true;
+  //       alert("Second Number Is Not Valid.");
+  //       continue;
+  //     }
+  //     else {
+  //       flag = false;
+  //       alert("Second Number Is Valid.");
+  //       continue;
+  //     }
+  //   }
+  // }
+
+  let minNumber = Math.min(firstNumber, secondNumber);
+  let maxNumber = Math.max(firstNumber, secondNumber);
+
+  //if the first number is odd.
+  if ((minNumber % 2) === 0) {
+      while (minNumber <= maxNumber ) {
+      console.log(minNumber);
+      minNumber += 2;
+    }
+  }else {
+      minNumber++;
+      while (minNumber <= maxNumber ) {
+      console.log(minNumber);
+      minNumber += 2;
+    }
+  }
+  
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+
+  <!-- ===============================
+       Basic Page Meta
+       Defines charset and responsive viewport
+  ================================ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bulb</title>
+
+  <!-- ===============================
+       SEO Meta Tags
+       Helps search engines understand the page
+  ================================ -->
+  <meta name="description" content="Page meta description for SEO">
+  <meta name="robots" content="index, follow">
+
+  <!-- ===============================
+       Open Graph (Social Sharing)
+       Used when the page is shared on social networks
+  ================================ -->
+  <meta property="og:title" content="page title">
+  <meta property="og:description" content="short description for page">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com">
+  <meta property="og:image" content="https://example.com/images/cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="fa-IR">
+  <meta property="og:site_name" content="site name">
+
+  <!-- ===============================
+       Browser Theme Color
+       Changes browser UI color on mobile
+  ================================ -->
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- ===============================
+       Favicons
+       Browser tab icons
+  ================================ -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+
+  <!-- ===============================
+       Page Styles
+  ================================ -->
+  <style>
+
+    /* Reset and center page content */
+    body {
+      padding: 0;
+      margin: 0;
+      height: 100vh;
+      background-color: gray;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Button styling */
+    button {
+      padding: 0.5rem 1rem;
+      background-color: mediumblue;
+      border: 1px solid skyblue;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* Container layout */
+    div {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ===============================
+       Bulb Control Section
+       Contains bulb image and control button
+  ================================ -->
+  <div>
+
+    <!-- Bulb image (initially OFF) -->
+    <img src="../Assets/Images/bulboff.gif" alt="bulb">
+
+    <!-- Button to toggle bulb state -->
+    <button type="button">
+      لامپ را روشن کنید
+    </button>
+
+  </div>
+
+  <!-- ===============================
+       JavaScript Logic
+       Handles bulb on/off toggle
+  ================================ -->
+  <script>
+
+    /* --------------------------------
+       DOM Element Selection
+       -------------------------------- */
+
+    // Select bulb image
+    const bulb = document.querySelector("img");
+
+    // Select control button
+    const btn = document.querySelector("button");
+
+
+    /* --------------------------------
+       Application State
+       Tracks whether bulb is ON or OFF
+       -------------------------------- */
+
+    let isOn = false;
+
+
+    /* --------------------------------
+       Bulb Toggle Function
+       Changes image and button text
+       -------------------------------- */
+
+    function bulbHandler() {
+
+      // If bulb is currently ON → turn it OFF
+      if (isOn) {
+
+        bulb.src = "../Assets/Images/bulboff.gif";
+        btn.textContent = "لامپ را روشن کنید";
+        isOn = false;
+
+      } 
+      
+      // Otherwise → turn it ON
+      else {
+
+        bulb.src = "../Assets/Images/bulbon.gif";
+        btn.textContent = "لامپ را خاموش کنید";
+        isOn = true;
+
+      }
+
+    }
+
+
+    /* --------------------------------
+       Event Listener
+       Executes toggle function on click
+       -------------------------------- */
+
+    btn.addEventListener("click", bulbHandler);
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo List</title>
+</head>
+<body>
+  
+  <script>
+
+    /*⭐⭐⭐⭐⭐*/
+
+    /*🚀 Start*/
+
+    let myToDoInfo = [
+
+      { 
+        id : 1, toDo : "باشگاه", time : "18:00", status : "انجام شده",
+      },
+
+      { 
+        id : 2, toDo : "مطالعه", time : "09:00", status : "انجام شده",
+      },
+
+      { 
+        id : 3, toDo : "خرید", time : "15:00", status : "انجام نشده",
+      },
+
+
+    ];
+
+    // Input validation function
+    function inputValidation(message) {
+
+
+      while (true) {
+
+        const input = prompt(message)
+        if (input === null || input.trim() === "") {
+          alert("ورودی نامعتبر لطفا دوباره امتحان کنید");
+          continue;
+
+        }else {
+
+          return input.trim();
+
+        }
+
+      }
+
+    }
+
+    // Remove ToDo  function
+    function deleteToDo() {
+
+      // Receiving Input 
+      const input = inputValidation("لطفا آیدی یا عنوان کار مد نظری که میخواهید حذف شود را وارد کنید:");
+      const idInput = Number(input);
+
+      // Find ToDo Index 
+      const foundItemIndex = myToDoInfo.findIndex(function(item) {
+
+        return item.toDo === input.toLowerCase().trim() || item.id === idInput;
+
+      });
+
+      if (foundItemIndex === -1) {
+
+        alert("نتیجه مورد نظر یافت نشد!");
+        return;
+
+      }
+
+      const itemToRemove = myToDoInfo[foundItemIndex];
+      const confirmDelete = confirm(`آیا مطمئن هستید که می‌خواهید کار زیر را حذف کنید؟\n"${itemToRemove.toDo}"`);
+
+      if (confirmDelete) {
+
+        myToDoInfo.slice(foundItemIndex, 1);
+
+        alert("✅ کار مورد نظر با موفقیت حذف شد.");
+        console.log("لیست به‌روز شده:", myToDoInfo);
+
+      }else {
+
+        alert("⚠️ عملیات حذف لغو شد.")
+
+      }
+
+
+    }
+
+    //Add New ToDo Function
+    function addNewToDo() {
+
+      const newTodoTitle = inputValidation("لطفا عنوان کار جدید را وارد کنید.");
+      return (myToDoInfo.push(
+
+        {
+          id : myToDoInfo.length + 1,
+          toDo : newTodoTitle,
+          time : "",
+          status : "انجام نشده",
+        }
+
+      ));
+
+    }
+
+    //Edit Command Function
+    function editCommandFunction() {
+
+      const validCommands = ["1","2","3"];
+
+      while (true) {
+
+        const editCommand = inputValidation("دستور مورد نظر را انتخاب کنید:\n1. اضافه کردن ToDo\n2. حذف ToDo\n3. تغییر وضعیت ToDo").trim();
+        if (validCommands.includes(editCommand)) {
+
+          return editCommand;
+
+        }else {
+
+          alert("دستور مورد نظر یافت نشد.لطفا دوباره امتحان کنید.");
+        }
+
+
+      }
+
+    }
+
+    //Change Status Function
+    function changeStatus() {
+
+      // Receiving Input 
+      const input = inputValidation("لطفا آیدی یا عنوان کار مد نظری که میخواهید تغییر وضعیت داده شود را وارد کنید:");
+      const idInput = Number(input);
+
+      const foundItemIndex = myToDoInfo.findIndex(function(item) {
+
+        return item.id === idInput || item.toDo === input.toLowerCase().trim();
+
+      });
+
+      if (foundItemIndex === -1) {
+
+        alert("نتیجه مورد نظر یافت نشد!");
+        return;
+
+      }
+
+      while (true) {
+
+        const editCommand = inputValidation("وضعیت مورد نظر را انتخاب کنید:\n1. انجام شده\n2. انجام نشده \n3.حذف شده").trim();
+
+        if (editCommand === "1"){
+
+          const changeStatusItem = myToDoInfo[foundItemIndex];
+          changeStatusItem.status = "انجام شده";
+          break;
+
+        }else if (editCommand === "2") {
+
+          const changeStatusItem = myToDoInfo[foundItemIndex];
+          changeStatusItem.status = "انجام نشده";
+          break;
+
+        }else if (editCommand === "3") {
+
+          const changeStatusItem = myToDoInfo[foundItemIndex];
+          changeStatusItem.status = "حذف شده";
+          break;
+
+      }else {
+        alert("دستور مورد نظر یافت نشد.لطفا دوباره امتحان کنید.");
+      }
+
+    }
+
+  }
+    //===============================================
+    while (true) {
+
+      toDoTitle = inputValidation("لطفا عنوان کاری که می خواهید انجام دهید را وارد کنید:");
+
+      myToDoInfo.push(
+        {
+          id : myToDoInfo.length + 1,
+          toDo : toDoTitle.toLowerCase().trim(),
+          time : "",
+          status : "انجام نشده"
+        }
+      );
+
+      const proceed = confirm ("آیا می خواهید ادامه بدهید؟");
+      if (!proceed) break;
+
+    }
+    
+    alert("لیست کارهای شما به شرح زیر است👇");
+    console.log("لیست کارهای من: ", myToDoInfo);
+
+    const knownStatus = myToDoInfo.filter(item => item.status === "انجام شده");
+    const unknownStatus = myToDoInfo.filter(item => item.status === "انجام نشده");
+
+    console.log("کارهای با 'انجام شده':", knownStatus);
+    console.log("کارهای با وضعیت 'انجام نشده':", unknownStatus);
+
+    // console.log(editCommand)
+
+    editCommand = editCommandFunction();
+
+    //Add New ToDos
+    if (editCommand === "1") {
+
+      while (true) {
+
+        addNewToDo();
+        const procced = confirm("آیا بازم میخواهید ادامه دهید؟");
+        if (!procced) break;
+
+      }   
+
+      console.log("لیست کارهای من: ", myToDoInfo);
+
+    }
+    if (editCommand === "2") {
+
+      while (true) {
+
+        deleteToDo();
+        const procced = confirm("آیا بازم مایل به حذف دوباره هستید؟");
+        if (!procced) break;
+
+      }
+
+      console.log("لیست کارهای من: ", myToDoInfo);
+
+    }
+    if (editCommand === "3") {
+
+      while (true) {
+
+        changeStatus();
+        const procced = confirm("آیا بازم مایل به تغییر وضعیت کاری هستید؟");
+        if (!procced) break;
+
+      }
+
+      console.log("لیست کارهای من: ", myToDoInfo);
+
+    }
+
+
+
+      
+
+    
+    
+
+  </script>
+
+</body>
+</html>

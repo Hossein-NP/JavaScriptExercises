@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basket Management</title>
+</head>
+<body>
+  
+  <script>
+
+    /*⭐⭐⭐⭐*/
+
+    /*🚀 Start*/
+
+
+    //Variables
+    let totalPrice = 0;
+    const dataBase = [
+      { id : 1, productTitle : "Iphon 17", price : 1099, qty : 20 },
+      { id : 2, productTitle : "Apple watch", price : 499, qty : 10 },
+      { id : 3, productTitle : "samsung s26 ultra", price :  899, qty : 15 },
+      { id : 4, productTitle : "redmi note 14 4G", price :  200, qty : 50 },
+      { id : 5, productTitle : "iPhone 17 pro max cover", price :  10, qty : 100 },
+      { id : 6, productTitle : "کابل usb-c", price :  5, qty : 34 },
+      { id : 7, productTitle : "sunscreen", price :  2, qty : 73},
+      { id : 8, productTitle : "hair care", price :  6, qty : 85 },
+      { id : 9, productTitle : "women’s jacket", price :  100, qty : 19 },
+    ];
+    const userShoppingCart = [
+      { id : 1, productTitle : "women’s jacket", price :  100 },
+      { id : 2, productTitle : "sunscreen", price :  2 },
+      { id : 3, productTitle : "Apple watch", price : 499 },
+    ];
+    
+    //Functions
+    function verification1() {
+
+      let item;
+      //Start Loop
+      while (true) {
+
+        item = prompt("To add a product, enter the word “add”, and to remove a product, enter the word “remove”.");
+
+        if (item === null || item.trim() === "") {
+          alert("Invalid input!.Try again.");
+          continue
+        };
+
+        item = item.toLowerCase().trim();
+
+        if (item === "add" || item === "remove") {
+          return item;
+        }
+
+      }
+      //Finish Loop
+      
+    }
+    function verification2() {
+
+      let theEnteredProduct;
+      //Start Loop
+      while (true) {
+
+        theEnteredProduct = prompt("Please enter the name of the product you want to add.");
+
+        if (theEnteredProduct === null || theEnteredProduct.trim() === "") {
+          alert("Invalid input!.Try again.");
+          continue
+        };
+
+        if (theEnteredProduct.toLowerCase().trim() !== "") {
+          return theEnteredProduct;
+        };
+
+      }
+      //Finish Loop
+      
+    }
+    function verification3() {
+
+      let theRemovedProduct;
+      //Start Loop
+      while (true) {
+
+        theRemovedProduct = prompt("Please enter the name of the product you want to remove.");
+
+        if (theRemovedProduct === null || theRemovedProduct.trim() === "") {
+          alert("Invalid input!.Try again.");
+          continue
+        };
+
+        if (theRemovedProduct.toLowerCase().trim() !== "") {
+          return theRemovedProduct;
+        };
+
+      }
+      //Finish Loop
+      
+    }
+
+    //💻Program
+    function basketManagement() {
+
+      const item = verification1();
+
+      if (item === "add") {
+
+        let theEnteredProduct = verification2().trim();
+        const productStock = dataBase.find(function(product_stock) {
+          return product_stock.productTitle.toLowerCase() === theEnteredProduct.toLowerCase();
+        });
+        console.log(productStock)
+        if (productStock) {
+
+          alert("The product you are looking for is available");
+          const addNewProduct = {
+            id: userShoppingCart.length + 1,
+            productTitle: productStock.productTitle,
+            price: productStock.price,
+          };
+          userShoppingCart.push(addNewProduct);
+          userShoppingCart.forEach(function(sum) {
+            totalPrice += sum.price;
+          })
+          console.log("User shopping cart:", userShoppingCart , "\n" + "Total price:", totalPrice);
+
+        }else {
+
+          alert("Product not found! Try again.");
+          
+        }
+        
+      }else {
+
+        if (item === "remove") {
+
+        let theRemovedProduct = verification3().trim();
+        const productStock = userShoppingCart.find(function(product_stock) {
+          return product_stock.productTitle.toLowerCase() === theRemovedProduct.toLowerCase();
+        });
+        if (productStock) {
+
+          alert("The selected product was successfully removed from your basket.");
+          const productStockIndex = userShoppingCart.findIndex(function(product_stock) {
+            return product_stock.productTitle.toLowerCase() === theRemovedProduct.toLowerCase();
+          });
+          userShoppingCart.splice(productStockIndex, 1);
+          userShoppingCart.forEach(function(sum) {
+            totalPrice += sum.price;
+          })
+          console.log("User shopping cart:", userShoppingCart , "\n" + "Total price:", totalPrice);
+
+        }else {
+
+          alert("Product not found! Try again.");
+          
+        }
+
+      }
+
+    }
+
+  }
+    
+    basketManagement();
+
+  </script>
+
+</body>
+</html>

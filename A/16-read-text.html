@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Read Text</title>
+</head>
+<body>
+  
+  <script>
+
+    /*⭐⭐⭐⭐*/
+
+    /*🚀 Start*/
+
+    // Input validation 
+    let word;
+    while ( true ) {
+
+      word = prompt( "Please enter your word:" );
+
+      if ( word === null || word.trim() === "" ) {
+
+        continue;
+
+      }else {
+
+        break;
+
+      }
+
+    }
+
+    const splitWord = word.split("");
+    const reverseWord = splitWord.reverse();
+    const joinWord = reverseWord.join("");
+
+    if (joinWord === word) {
+
+      alert( "برعکس کلمه وارد شده با  خود کلمه یکی می باشد." );
+
+    }else {
+
+      alert( "برعکس کلمه وارد شده با خود کلمه یکی نمی باشد." );
+
+    }
+
+
+  </script>
+
+</body>
+</html>

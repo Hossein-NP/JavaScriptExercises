@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Page meta description for SEO">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="page title">
+  <meta property="og:description" content="short description for page">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/https://example.com">
+  <meta property="og:image" content="/https://example.com/images/cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="fa-IR">
+  <meta property="og:site_name" content="site name">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="src/output.css">
+
+</head>
+
+<body class="flex items-center justify-center h-screen bg-emerald-100 font-yekan font-medium">
+
+  <section class="form flex flex-col items-center">
+
+    <div class="form-wrapper relative flex flex-col mt-15 bg-white w-80 rounded-xl p-7 gap-y-8">
+
+      <div class="form-wrapper__head text-center space-y-2">
+
+        <p class="font-bold text-lg">ورود به حساب کابری</p>
+        <p class="text-black-80 text-xs">
+          هنوز ثبت نام نکرده اید؟ 
+          <a class="text-brand font-bold" href="">ثبت نام</a>
+        </p>
+
+      </div>
+
+      <div class="form-wrapper__body">
+
+        <form action="" method="get">
+
+          <fieldset class="space-y-4">
+
+            <div class="flex flex-col">
+
+              <label class="text-xs" for="username">نام کاربری</label>
+              <input class="custom-input mt-2.5" type="text" name="" id="username" placeholder="نام کاربری خود را وارد کنید...">
+              <span class="input1 hidden mt-2"></span>
+
+            </div>
+
+            <div class="flex flex-col">
+
+              <label class="text-xs" for="password">رمز عبور</label>
+              <input class="custom-input mt-2.5" type="password" name="" id="password" placeholder="رمز عبور خود را وارد کنید...">
+              <span class="input2 hidden mt-2"></span>
+
+            </div>
+
+            <button class="w-full bg-black-100 rounded-lg h-12 cursor-pointer transition hover:bg-black-80 text-white" type="button">ادامه و ورود به حساب</button>
+
+          </fieldset>
+
+        </form>
+
+      </div>
+
+    </div>
+
+    <p class="font-light text-sm mt-6"> با عضویت در سایت، <a href="#" class="text-brand underline">قوانین</a> و شرایط سبزلرن را پذیرفته‌اید. </p>
+
+  </section>
+
+ <!-- JS -->
+ <script>
+
+  const submitBtn = document.querySelector("button");
+  const userNameInput = document.querySelector("#username");
+  const passwordInput = document.querySelector("#password");
+  const inputMessage1 = document.querySelector(".input1");
+  const inputMessage2 = document.querySelector(".input2");
+
+
+  function validateUsername(username) {
+
+    if (username === "") {
+
+      inputMessage1.classList.remove("hidden");
+      inputMessage1.classList.add("input-message__invalid");
+      inputMessage1.textContent = "نام کاربری نمی تواند خالی باشد ";
+
+    }else if (username.length >= 3) {
+
+      inputMessage1.classList.remove("hidden");
+      inputMessage1.classList.add("input-message__valid");
+      inputMessage1.classList.remove("input-message__invalid");
+      inputMessage1.textContent = "نام کاربری صحیح می باشد";
+  
+    }else {
+  
+      inputMessage1.classList.remove("hidden");
+      inputMessage1.classList.remove("input-message__valid");
+      inputMessage1.classList.add("input-message__invalid");
+      inputMessage1.textContent = "نام کاربری نمی تواند کمتر از 3 کاراکتر باشد";
+  
+    }
+
+  }
+
+  function validatePassword(userpassword) {
+
+    if (userpassword === "") {
+
+      inputMessage2.classList.remove("hidden");
+      inputMessage2.classList.remove("input-message__valid");
+      inputMessage2.classList.add("input-message__invalid");
+      inputMessage2.textContent = "پسورد نمی تواند خالی باشد ";
+
+    }else if (userpassword.length >= 8) {
+
+      inputMessage2.classList.remove("hidden");
+      inputMessage2.classList.add("input-message__valid");
+      inputMessage2.classList.remove("input-message__invalid");
+      inputMessage2.textContent = "پسورد صحیح می باشد";
+
+    }else {
+
+      inputMessage2.classList.remove("hidden");
+      inputMessage2.classList.remove("input-message__valid");
+      inputMessage2.classList.add("input-message__invalid");
+      inputMessage2.textContent = "پسورد باید حداقل 8 کاراکتر باشد";
+
+    }
+
+  }
+
+  submitBtn.addEventListener("click", function() {
+
+    const userNameValue = userNameInput.value.trim();
+    const userPasswordValue = passwordInput.value.trim();
+    
+    validateUsername(userNameValue);
+    validatePassword(userPasswordValue)
+
+  })
+
+
+ </script>
+
+</body>
+</html>

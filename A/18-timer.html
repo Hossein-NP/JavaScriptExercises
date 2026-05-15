@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Name</title>
+<body>
+
+ <!-- JS -->
+ <script>
+
+  /*⭐⭐⭐*/
+
+  /*🚀 Start*/
+
+  let minutes = +prompt("enter minutes");
+  let second = +prompt("enter second");
+
+  const timer = setInterval(() => {
+    
+    
+     if (second === -1) {
+      minutes--;
+      second = 59;
+     }
+     if (second === 0 && minutes === 0) {
+       clearInterval(timer);
+       alert("Finish");
+    }
+
+    console.log(`Timer : ${minutes} : ${second}`);
+    second--;
+
+    
+
+  },1000)
+
+
+ </script>
+
+</body>
+</html>

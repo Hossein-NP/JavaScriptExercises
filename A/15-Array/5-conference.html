@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conference</title>
+</head>
+<body>
+  
+  <script>
+
+    /*⭐⭐*/
+
+    /*🚀 Start*/
+
+    let UsersAge = [];
+    let maxAge;
+    let minAge;
+    let idCounter = 1;
+    let memberCount = +prompt("Please specify the number of conference participants.");
+    alert("There are " + memberCount + " participants in the conference.")
+
+    for (let i = 0; i < memberCount; i++) {
+
+      let memberAge = prompt("Please enter age of member " + (i + 1))
+      let memberInfo = {
+        id : idCounter++,
+        age : memberAge,
+      };
+      UsersAge.push(memberInfo);
+
+    }
+
+    console.log("Member info: ", UsersAge);
+
+    const dataValidation = UsersAge.forEach(function(userAge) {
+      while (userAge.age > 50) {
+        console.log(userAge.age);
+      };
+      while (userAge.age < 18) {
+        console.log(userAge.age);
+      }
+    })
+    
+    
+  </script>
+
+</body>
+</html>

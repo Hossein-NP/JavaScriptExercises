@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+</head>
+<body>
+  
+  <script>
+
+    /*⭐⭐⭐⭐*/
+
+    /*🚀 Start*/
+
+    // Variables 
+    let flag = true;
+    const dataBase = [
+      { id : 1, productTitle : "Iphon 17", price : 1099, qty : 20 },
+      { id : 2, productTitle : "Apple watch", price : 499, qty : 10 },
+      { id : 3, productTitle : "samsung s26 ultra", price :  899, qty : 15 },
+      { id : 4, productTitle : "redmi note 14 4G", price :  200, qty : 50 },
+      { id : 5, productTitle : "iPhone 17 pro max cover", price :  10, qty : 100 },
+      { id : 6, productTitle : "کابل usb-c", price :  5, qty : 34 },
+      { id : 7, productTitle : "sunscreen", price :  2, qty : 73},
+      { id : 8, productTitle : "hair care", price :  6, qty : 85 },
+      { id : 9, productTitle : "women’s jacket", price :  100, qty : 19 },
+    ];
+    const userShoppingCart = [
+      { id : 1, productTitle : "women’s jacket", price :  100 },
+      { id : 2, productTitle : "sunscreen", price :  2 },
+      { id : 3, productTitle : "Apple watch", price : 499 },
+    ];
+    let totalPrice = 0;
+    let userNewProduct = {};
+    let productName = prompt("Please enter your product name:");
+
+    
+    //Program
+    if (productName == null || productName.trim() === "") {
+
+      while (flag) {
+
+        alert("The product name field cannot be empty. Please enter the desired product name.");
+        productName = prompt("Please enter your product name:");
+
+        if (productName == null || productName.trim() === "") {
+          flag = true;
+        }else {
+          flag = false;
+        }
+
+      }
+
+    }else {
+
+      const cleanProductName = productName.trim().toLowerCase();
+      const isItAvailable = dataBase.some(function(products) {
+        return products.productTitle.toLowerCase() === cleanProductName && products.qty > 0;
+      });
+
+      if (isItAvailable === true) {
+
+        userNewProduct = { id : userShoppingCart.length + 1, productTitle : cleanProductName,};
+        dataBase.forEach(function(product) {
+
+          if (product.productTitle === cleanProductName) {
+            alert("**Product " + "\"" + userNewProduct.productTitle + "\"" + " has been added to your cart.**");
+            userNewProduct.price = product.price;
+            console.log("The product was found: ",product);
+          }
+
+        })
+
+        userShoppingCart.push(userNewProduct);
+        console.log("User shopping cart: " , userShoppingCart);
+
+        userShoppingCart.forEach(function(productPrice) {
+          totalPrice += productPrice.price;
+        });
+        console.log("Total price: " , totalPrice + "$")
+
+      }else {
+
+        alert("Sorry, product " + "\"" + cleanProductName + "\"" + " is currently out of stock.");
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>

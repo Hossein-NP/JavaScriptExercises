@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Of Characters</title>
+</head>
+<body>
+  
+
+  <script>
+
+    //⭐⭐⭐
+
+    let number = prompt("Please enter the number: ");
+    let count = 0;
+
+    function counter(input) {
+      if (input === null) return "Canceled";
+      if (input.trim() === "") return "Empty input";
+
+      if(isNaN(input)) return "The input value must be the number.";
+
+      if (input === "0") {
+        return count = 1;
+      }else {
+        let finalInput = +input;
+        for(let i = 0; Math.floor(finalInput / 10) !== 0; i++) {
+          count++;
+          console.log(count);
+          finalInput = Math.floor(finalInput / 10);
+        }
+      }
+
+    }
+
+    alert(counter(number));
+
+  </script>
+</body>
+</html>

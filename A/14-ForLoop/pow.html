@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pow</title>
+</head>
+<body>
+  
+  <script>
+
+    /*⭐⭐⭐*/
+
+    /*🚀 Start*/
+
+    let firstNumber = +prompt('Enter a "first" numbre:', 0);
+    let secondNumber = +prompt('Enter a "second" numbre:', 0);
+
+    //1️⃣
+    function pow1(input_1, input_2) {
+
+      let pow = 1;
+
+      if (input_2 === 0) return 1;
+      if (input_1 === 0) return 0;
+
+      for(let i = 1; i <= input_2; i++)  { pow *= input_1; }
+
+      return pow;
+
+    }
+
+    /* 🚩 */  
+    let result = pow1(firstNumber, secondNumber);
+    console.log("First Number ^ Second Number: " + result);
+
+
+    //2️⃣
+    function pow2(value_1, value_2) {
+
+      let pow = 1;
+      let i = 1;
+
+      if (value_2 === 0) return 1;
+      if (value_1 === 0) return 0;
+
+      while (i <= value_2) {
+
+        pow *= value_1; 
+        i++;
+
+      }
+      return pow;
+    }
+
+    /* 🚩 */  
+    let result2 = pow2(firstNumber, secondNumber);
+    console.log("First Number ^ Second Number: " + result2);
+
+
+    //3️⃣
+    function pow3(value_1, value_2) {
+
+      let pow = 1;
+      let i = 1;
+
+      if (value_2 === 0) return 1;
+      if (value_1 === 0) return 0;
+
+      do {
+
+        pow *= value_1; 
+        i++;
+
+      } while (i <= value_2)
+
+      return pow;
+    }
+
+    /* 🚩 */  
+    let result3 = pow3(firstNumber, secondNumber);
+    console.log("First Number ^ Second Number: " + result3);
+
+  </script>
+
+</body>
+</html>

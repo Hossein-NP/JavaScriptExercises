@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>forEach Method</title>
+</head>
+<body>
+  
+  <script>
+
+    /*⭐⭐*/
+
+    /*🚀 Start*/
+
+    const usersInfo = [
+      { id : 1, name : "Hossein", age : 30, email : "hossein@gmail.com" },
+      { id : 2, name : "Amir", age : 22, email : "amir@gmail.com" },
+      { id : 3, name : "Farzad", age : 35, email : "farzad@gmail.com" },
+      { id : 4, name : "Zahra", age : 18, email : "zahra@gmail.com" },
+      { id : 5, name : "Yeganeh", age : 24, email : "yeganeh@gmail.com" }
+    ]
+
+    usersInfo.forEach(function(user){
+      console.log("[" + "name: " + user.name + "\t age: " + user.age + "\t email: " + user.email + "]")
+    })
+
+    // usersInfo.forEach(function(user){
+    //   console.log("[" + "name: " + user["name"] + "\t age: " + user["age"] + "\t email: " + user["email"] + "]")
+    // })
+
+  </script>
+
+</body>
+</html>

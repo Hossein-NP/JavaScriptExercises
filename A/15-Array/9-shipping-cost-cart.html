@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipping cost cart</title>
+</head>
+<body>
+
+  <script>
+
+    /*⭐⭐⭐⭐*/
+
+    /*🚀 Start*/
+
+    // Currency unit = toman/تومان
+    let sum = 0;
+    const cart = [
+      {
+        id: 101,
+        name: "Wireless Mouse",
+        price: 350000
+      },
+      {
+        id: 102,
+        name: "Mechanical Keyboard",
+        price: 1850000
+      },
+      {
+        id: 103,
+        name: "USB-C Charger 30W",
+        price: 62000
+      },
+      {
+        id: 104,
+        name: "Laptop Stand",
+        price: 430000
+      },
+      {
+        id: 105,
+        name: "Mobile Cover",
+        price: 30000
+      }
+    ];
+
+    const UserShippingCost = cart.map(function(item) {
+
+      //Method 1:
+      // if (item.price >= 100000) {
+
+      //   return {
+      //     id : item.id,
+      //     name : item.name,
+      //     price : item.price,
+      //     shippingCost : 1000,
+      //     totalPrice : item.price + 1000,
+      //   }
+
+      // }else {
+
+      //   return {
+      //     id : item.id,
+      //     name : item.name,
+      //     price: item.price,
+      //     shippingCost : "free",
+      //     totalPrice : item.price,
+      //   }
+
+      // };
+
+      //Method 2th:
+      
+      const hasFreeShipping = item.price < 100000;
+      return {
+
+        id : item.id,
+        name : item.name,
+        price : item.price,
+        shippingCost : hasFreeShipping ? "Free" : 1000,
+        totalPrice : hasFreeShipping ? item.price : item.price + 1000,
+        
+      }
+
+    });
+
+  console.log(UserShippingCost);
+  console.log(sum);
+
+
+  </script>
+  
+</body>
+</html>

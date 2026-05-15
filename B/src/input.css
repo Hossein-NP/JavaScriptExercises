@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@layer base {
+
+    @font-face {
+    font-family: "YekanBakh";
+    src: url("../Assets/fonts/YekanBakh-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "YekanBakh";
+    src: url("../Assets/fonts/YekanBakh-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "YekanBakh";
+    src: url("../Assets/fonts/YekanBakh-Boldt.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+
+  * {
+    line-height: 2;
+  }
+
+}
+
+@theme {
+
+  --color-brand: rgba(30, 177, 90, 1);
+  --color-black-20: #e3e3e3;
+  --color-black-80: #575757;
+  --color-black-100: #242424;
+  --font-yekan: "YekanBakh", sans-serif;
+
+}
+
+@layer components {
+
+  .custom-input {
+    border: 1px solid var(--color-black-20);
+    border-radius: 0.5rem;
+    font-size: 12px;
+    outline: none;
+    padding: 0 16px;
+    height: 48px;
+    transition: all 150ms ease;
+  }
+
+  .custom-input:focus {
+    border-color: var(--color-brand);
+  }
+
+  .form-wrapper {
+    @apply after:content-[''] after:absolute after:block after:bg-brand after:w-87 after:h-25 after:rounded-xl after:-mt-10 after:left-1/2 after:right-1/2 after:translate-x-1/2 after:mx-auto after:-z-12;
+  }
+
+  .input-message__valid {
+    @apply text-brand text-xs font-medium;
+  }
+
+  .input-message__invalid {
+    @apply text-red-600 text-xs font-medium;
+  }
+
+}

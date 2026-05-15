@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration System</title>
+</head>
+<body>
+
+  
+  <script>
+
+    /*⭐⭐⭐⭐*/
+
+    /*🚀 Start*/
+
+    /*📀 Variables*/
+    let name = prompt("Please enter your name: ", "John");
+    // const nameLength = name.length;
+    // const family = prompt("Please enter your family: ", "Doe");
+    // const familyLength = family.length;
+    // const age = +prompt("Please enter your age: ", 22);
+    // const email = prompt("Please enter your email: ");
+    let flag = true;
+    const usersInfo = [
+      { id:1, name:"Amir", Family:"yeganeh", age: 22, email:"amiryega22@gmail.com"  },
+      { id:2, name:"Farzad", Family:"Tagavi", age: 18, email:"kingtony@gmail.com"  },
+      { id:2, name:"Neda", Family:"Narimani", age: 28, email:"drneda00@gmail.com"  },
+    ]
+
+    function registerSystem(userName) {
+
+      // Name 
+      if (userName.length < 3 || userName.length > 15) {  
+        return alert("نام کاربر نمی تواند کمتر از 3 و بیشتر از 15 کاراکتر باشد!");
+        while (flag) {
+          return userName = prompt("Please enter your name: ", "John");
+          if (userName.length < 3 || userName.length > 15) {
+            flag = true;
+          }else {
+            flag = false;
+          }
+        }
+      }
+    }
+
+    const result = registerSystem(name);
+    console.log(result);
+
+
+    // Family 
+    
+    
+
+    // Age 
+    
+    
+
+    
+
+
+  </script>
+  
+</body>
+</html>

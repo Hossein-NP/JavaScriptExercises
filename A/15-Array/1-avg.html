@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Average</title>
+</head>
+<body>
+  
+  <script>
+
+    /*⭐⭐⭐*/
+
+    /*🚀 Start*/
+
+    let flag = true;
+    let number = 0;
+    let userNumbers = [];
+    let sum = 0;
+
+    while (flag) {
+
+      number = +prompt('Enter a number: ');
+      userNumbers.push(number);
+      let continue_ = confirm('continue?');
+      continue_ === true ? flag = true : flag = false;
+
+    }
+
+    // console.log(userNumbers);
+
+    for(let i = 0; i < userNumbers.length; i++) {
+      sum += userNumbers[i];
+    }
+
+    // console.log(numbers)
+    console.log(sum);
+    // console.log(numbers.length);
+
+    const avg = sum / (userNumbers.length);
+    console.log("Average: " + avg);
+
+  </script>
+
+</body>
+</html>

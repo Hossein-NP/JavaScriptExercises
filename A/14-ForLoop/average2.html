@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Average</title>
+</head>
+<body>
+  
+  <script>
+
+    /*⭐⭐⭐*/
+
+    /*🚀 Start*/
+
+    let counter = 0;
+    let sum = 0;
+    let number = 0;
+    let flag = true;
+
+    //1️⃣ while (flag) {
+    //   let number = +prompt('Enter a number:');
+    //   counter++;
+    //   sum += number;
+    //   let continue_ = confirm('continue?');
+    //   if (continue_ === true) {
+    //     flag = true;
+    //   }else {
+    //     flag = false;
+    //   }
+    // }
+
+    //2️⃣
+    while (number !== -1) {
+      sum += number;
+      number = +prompt("Enter a number:");
+      if (number !== -1) {
+        counter++;
+      }
+    }
+
+    console.log(sum + "\n" + counter);
+    const average = Math.floor(sum / counter);
+    console.log("Average: " + average);
+
+  </script>
+
+</body>
+</html>

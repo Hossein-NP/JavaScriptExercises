@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Global</title>
+</head>
+<body>
+  
+  <script>
+
+    /*⭐⭐⭐*/
+
+    /*🚀 Start*/
+
+    //🏠Variables
+    const articlesSource = [
+      { date : 2016, articleTitle : "دارک وب چیست؟ تفاوت آن با اینترنت + خطرات و واقعیت‌ها", articleContent : "c2016", author : "شهرام خندقی", readingTime : 10},
+      { date : 2022, articleTitle : "خطرات و مزایا دارک وب", articleContent : "c2022", author : "شهرام خندقی", readingTime : 15},
+      { date : 2026, articleTitle : "ریکت چیست؟", articleContent : "c2026", author : "ارمیا مزرعه", readingTime : 5},
+      { date : 2026, articleTitle : "ساخت مودال در تلویند", articleContent : "c2026", author : "ahtaherkhani1", readingTime : 20},
+      { date : 2024, articleTitle : "20 کتابخانه مفید ریکت", articleContent : "c2024", author : "ahtaherkhani1" , readingTime : 8},
+      { date : 2019, articleTitle : "سوالات مصاحبه ریکت", articleContent : "c2019", author : "شهرام خندقی", readingTime : 14},
+    ];
+
+    //💻Program
+
+    //1-👁️Input verification function......
+    function inputVerify() {
+
+      let article;
+      while (true) {
+
+        article = prompt("لطفا عنوان مقاله را وارد کنید.");
+        if (article === null || article.trim() === "") {
+
+          alert("فیلد نمی تواند خالی باشد.لطفا عنوان مقاله مد نظر را وارد کنید.");
+          continue;
+
+        }else {
+
+          return article;
+          break;
+
+        }
+
+      }
+
+    }
+    const UserArticleName = inputVerify().toLowerCase().trim();
+
+    //2- 🔎 Article search
+    //👀Note: The entered article title must exactly match the title in the source.
+    // const foundArticle = articlesSource.filter(function(title) {
+
+    //   return title.articleTitle.toLowerCase().trim() === UserArticleName;
+
+    // })
+    // console.log(foundArticle)
+    // if (foundArticle.length > 0) {
+
+    //   alert("مقاله مد نظر شما یافت شد.");
+    //   console.log(
+    //     "تاریخ انتشار مقاله:", foundArticle[0].date,
+    //     "\nعنوان مقاله:", foundArticle[0].articleTitle,
+    //     "\nنویسنده:", foundArticle[0].author,
+    //     "\nمدت زمان مطالعه:", foundArticle[0].readingTime,
+    //     "\nمحتوا:", foundArticle[0].articleContent
+    //   );
+
+    // }else {
+
+    //   alert("مقاله مد نظر یافت نشد");
+
+    // }
+
+    //3- 🔎 Article search
+    let articleTitles = [];
+    articlesSource.forEach(function(article) {
+
+      articleTitles.push(article.articleTitle);
+
+    })
+
+    const clientArticle = articleTitles.filter(function(article) {
+
+      return article.includes(UserArticleName);
+
+    })
+
+    let showResult = "";
+    let counter = 1;
+    clientArticle.forEach(function(input) {
+
+      showResult += counter + "-" + input + "\n";
+      counter++;
+
+    });
+    console.log(showResult);
+
+    //Show details
+    let rowNum;
+    while (true) {
+
+      alert("لطفا شماره ردیف مقاله مد نظر را وارد کنید.");
+      rowNum = prompt("لطفا شماره ردیف مقاله مد نظر را وارد کنید.");
+
+      if (rowNum === null || rowNum.trim() === "") {
+        alert("لطفا شماره ردیف مقاله مد نظر را وارد کنید.");
+        continue;
+      }else {
+        return rowNum;
+      }
+
+    };
+    
+
+    
+    
+
+
+  </script>
+
+</body>
+</html>
