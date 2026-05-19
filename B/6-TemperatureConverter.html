@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature converter</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Page meta description for SEO">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="page title">
+  <meta property="og:description" content="short description for page">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com">
+  <meta property="og:image" content="https://example.com/images/cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="fa-IR">
+  <meta property="og:site_name" content="site name">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./src/output.css">
+
+</head>
+<body class="min-h-screen flex items-center justify-center bg-linear-to-b from-slate-100 via-blue-100 to-indigo-300/50 leading-[1.8] tracking-[-0.2px]">
+
+  
+  <section class="temp-box w-120 px-8 py-8 space-y-10 bg-white/80 backdrop-blur-lg shadow-xl rounded-3xl inset-ring-2 inset-ring-white">
+
+    <div class="temp-box__head text-center font-bold text-2xl text-gray-900">
+
+      <h1>Temperature Converter</h1>
+
+    </div>
+
+    <div class="temp-box__body space-y-8">
+
+      <div class="input-wrapper relative">
+
+        <div class="alert-box hidden absolute -top-12 rounded-lg bg-gray-400 px-2 h-10 text-white text-center leading-10 text-xs">
+          <span class="alert-box__text"></span>
+          <div class="triangle-down"></div>
+        </div>
+        <input class="w-full shadow-sm outline-0 inset-ring-2 inset-ring-slate-100 rounded-xl px-4 py-2 placeholder:text-zinc-400 placeholder:font-medium text-zinc-500" type="text" name="" id="temp-value" placeholder="Enter temperature">
+
+      </div>
+
+      <div class="temp-units flex items-end justify-between gap-4">
+
+        <div class="w-39 grow relative">
+
+          <span class="pl-1 font-semibold text-sm text-gray-500">From</span>
+          <select class="bg-white rounded-xl shadow-sm inset-ring-2 inset-ring-slate-100 text-gray-900 font-medium" name="" id="temp-units__from">
+
+            <option value="Fahrenheit">Fahrenheit</option>
+            <option value="Celsius">Celsius</option>
+            <option value="Kelvin">Kelvin</option>
+
+          </select>
+
+          <div class="absolute right-3 top-5 translate-y-6.25 pointer-events-none">
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+
+            <path d="M6 9l6 6 6-6"/>
+            </svg>
+
+          </div>
+
+        </div>
+
+        <button id="swapBtn" class="p-3 rounded-full bg-white shadow hover:shadow-lg transition">
+  
+          <svg id="swapIcon" class="transition-transform duration-500" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 7h13"/>
+            <path d="M13 4l4 3-4 3"/>
+            <path d="M20 17H7"/>
+            <path d="M11 20l-4-3 4-3"/>
+          </svg>
+
+        </button>
+
+        <div class="w-39 grow relative">
+
+          <span class="pl-1 font-semibold text-sm text-gray-500">To</span>
+          <select class="bg-white rounded-xl shadow-sm inset-ring-2 inset-ring-slate-100 text-gray-900 font-medium" name="" id="temp-units__to">
+
+            <option value="Celsius">Celsius</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+            <option value="Kelvin">Kelvin</option>
+
+          </select>
+
+          <div class="absolute right-3 top-5 translate-y-6.25 pointer-events-none">
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2">
+
+            <path d="M6 9l6 6 6-6"/>
+            </svg>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <button class="convert-btn w-full rounded-xl text-white font-semibold bg-linear-to-b from-blue-300 via-blue-400 to-blue-500 py-3 text-center text-xl cursor-pointer ring-1 ring-white shadow-xl" type="button">Convert</button>
+
+    </div>
+
+    <div class="temp-box__footer rounded-xl ring-2 ring-white shadow-lg bg-white px-4 h-30 font-bold flex items-center justify-center text-gray-900">
+      
+    </div>
+
+  </section>
+
+ <!-- JS -->
+ <script>
+
+  let alertTimer;
+  const input = document.querySelector("input");
+  const toUnit = document.querySelector("#temp-units__to");
+  const convertBtn = document.querySelector(".convert-btn");
+  const inputAlertBox = document.querySelector(".alert-box");
+  const fromUnit = document.querySelector("#temp-units__from");
+  const resultBox = document.querySelector(".temp-box__footer");
+  const inputAlertBoxText = document.querySelector(".alert-box__text");
+  const convert = {
+    // Celsius conversions
+    celsiusToFahrenheit: (c) => (c * 1.8) + 32,
+    celsiusToKelvin: (c) => c + 273.15,
+
+    // Fahrenheit conversions
+    fahrenheitToCelsius: (f) => (f - 32) / 1.8,
+    fahrenheitToKelvin: (f) => ((f - 32) / 1.8) + 273.15,
+
+    // Kelvin conversions
+    kelvinToCelsius: (k) => k - 273.15,
+    kelvinToFahrenheit: (k) => ((k - 273.15) * 1.8) + 32
+  };
+
+  
+  function inputValidation() {
+    
+    const inputValue = Number(input.value.trim());
+    if (isNaN(inputValue)) {
+
+      inputAlertBox.classList.remove("hidden");
+      inputAlertBox.classList.add("inline-block");
+      inputAlertBoxText.textContent = "ورودی میتواند فقط شامل عدد باشد";
+
+    }else if (inputValue === 0) {
+
+      inputAlertBox.classList.remove("hidden");
+      inputAlertBox.classList.add("inline-block");
+      inputAlertBoxText.textContent = "لطفا مقدار مورد نظر خود را وارد کنید";
+
+    }else if (!isNaN(inputValue) && inputValue !== 0) {
+
+      inputAlertBox.classList.remove("hidden");
+      inputAlertBox.classList.add("inline-block");
+      inputAlertBoxText.textContent = "مقدار وارد شده صحیح می باشد";
+
+    }
+    clearTimeout(alertTimer);
+    alertTimer = setTimeout(() => {
+      
+      inputAlertBox.classList.remove("inline-block");
+      inputAlertBox.classList.add("hidden");
+      
+    },2000);
+
+  }
+  function converter() {
+
+    const inputValue = Number(input.value.trim());
+    const fromUnitValue = fromUnit.value;
+    const toUnitValue = toUnit.value;
+
+    if (isNaN(inputValue)) {
+
+      resultBox.textContent = "مقدار ورودی نامعتبر😕";
+      return;
+
+    }else if (input.value.trim() === "") {
+
+      resultBox.textContent = "مقدار ورودی خالی می باشد😐";
+      return;
+
+    }
+
+    let result;
+
+    if (fromUnitValue === toUnitValue ) {
+
+      result = inputValue;
+      if (fromUnitValue === "Fahrenheit" && toUnitValue === "Fahrenheit") {
+        resultBox.textContent = `Result: ${result} F`;
+      }else if (fromUnitValue === "Celsius" && toUnitValue === "Celsius"){
+        resultBox.textContent = `Result: ${result} C`;
+      }
+      else if (fromUnitValue === "Kelvin" && toUnitValue === "Kelvin"){
+        resultBox.textContent = `Result: ${result} K`;
+      }
+      
+    }
+    else if (fromUnitValue === "Fahrenheit" && toUnitValue === "Celsius") {
+
+      result = convert.fahrenheitToCelsius(inputValue);
+      resultBox.textContent = `Result: ${result.toFixed(2)} C`;
+
+    }
+    else if (fromUnitValue === "Fahrenheit" && toUnitValue === "Kelvin") {
+
+      result = convert.fahrenheitToKelvin(inputValue);
+      resultBox.textContent = `Result: ${result.toFixed(2)} K`;
+
+    }else if (fromUnitValue === "Celsius" && toUnitValue === "Fahrenheit") {
+
+      result = convert.celsiusToFahrenheit(inputValue);
+      resultBox.textContent = `Result: ${result.toFixed(2)} F`;
+
+    }else if (fromUnitValue === "Celsius" && toUnitValue === "Kelvin") {
+
+      result = convert.celsiusToKelvin(inputValue);
+      resultBox.textContent = `Result: ${result.toFixed(2)} K`;
+
+    }else if (fromUnitValue === "Kelvin" && toUnitValue === "Celsius") {
+
+      result = convert.kelvinToCelsius(inputValue);
+      resultBox.textContent = `Result: ${result.toFixed(2)} C`;
+
+    }else if (fromUnitValue === "Kelvin" && toUnitValue === "Fahrenheit") {
+
+      result = convert.kelvinToFahrenheit(inputValue);
+      resultBox.textContent = `Result: ${result.toFixed(2)} F`;
+
+    }
+
+  }
+
+
+  input.addEventListener("keyup", inputValidation);
+  convertBtn.addEventListener("click", converter);
+
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket Selling</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Page meta description for SEO">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="page title">
+  <meta property="og:description" content="short description for page">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com">
+  <meta property="og:image" content="https://example.com/images/cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="fa-IR">
+  <meta property="og:site_name" content="site name">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+ <link rel="icon" href="/icon.svg" type="image/svg+xml">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./src/output.css">
+
+</head>
+<body class="min-h-screen font-yekan font-medium bg-gray-200">
+
+  <header class="information mt-20">
+
+    <div class="container">
+
+      <ul class="workflow flex gap-4 w-[60%] mx-auto text-gray-500">
+
+        <li class="workflow-list text-violet-950 first:[&_.workflow-number]:bg-violet-950">
+
+          <span class="workflow-number">1</span>
+          <span class="workflow-name">انتخاب مبدا و مقصد</span>
+
+        </li>
+
+        <li class="workflow-list">
+
+          <span class="workflow-number">2</span>
+          <span class="workflow-name">تائید و احراز هویت</span>
+
+        </li>
+
+        <li class="workflow-list">
+
+          <span class="workflow-number">3</span>
+          <span class="workflow-name">پرداخت و تائید نهایی</span>
+
+        </li>
+
+        <li class="workflow-list">
+
+          <span class="workflow-number">4</span>
+          <span class="workflow-name">دانلود و دریافت تیکت</span>
+
+        </li>
+
+      </ul>
+
+    </div>
+
+  </header>
+
+  <div class="container mt-20">
+
+    <main class="grid grid-cols-1 lg:grid-cols-5">
+
+      <section class="content lg:col-span-3 bg-white rounded-lg p-6">
+
+        <form class="flex flex-col" action="" method="post">
+
+          <p class="font-light text-xl text-violet-950">لطفا مشخصات زیر را تکمیل کنید</p>
+
+          <div class="personal-information space-y-4 mt-5">
+
+            <div class="username-input flex flex-col gap-1">
+
+              <label class="text-gray-500" for="username">نام و نام خانوادگی را وارد نمائید :</label>
+              <input class="" type="text" name="" id="username" placeholder="مثال: امیرحسین تیموری">
+
+            </div>
+
+            <div class="phone-input flex flex-col gap-1">
+
+              <label class="text-gray-500" for="phone">شماره موبایل را وارد نمائید :</label>
+              <input class="" type="text" name="" id="phone" placeholder="مثال: 09911871596">
+
+            </div>
+
+            <div class="email-input flex flex-col gap-1">
+
+              <label class="text-gray-500" for="email">آدرس ایمیل را وارد نمائید :</label>
+              <input class="" type="email" name="" id="email" placeholder="مثال: example@gmail.com">
+
+            </div>
+
+          </div>
+
+          <p class="font-light text-xl text-violet-950 mt-8">لطفا مسیر مبدا و مقصد را وارد نمائید</p>
+
+          <div class="travel-informaion flex flex-col mt-5 space-y-4 ">
+
+            <div class="select-province flex flex-col gap-1">
+
+              <label class="text-gray-500" for="province"> استان مقصد را وارد نمائید:</label>
+              <select name="" id="province">
+                <option selected>لطفا انتخاب نمائید ...</option>
+                <option value="آذربایجان شرقی">آذربایجان شرقی</option>
+                <option value="تهران">تهران</option>
+                <option value="مشهد">مشهد</option>
+                <option value="فارس">فارس</option>
+              </select>
+
+            </div>
+
+            <div class="select-province__cities flex flex-col gap-1">
+
+              <label class="text-gray-500" for="province-cities"> شهر مقصد را وارد نمائید:</label>
+              <select name="" id="province-cities">
+                <option selected>لطفا انتخاب نمائید ...</option>
+              </select>
+
+            </div>
+
+          </div>
+
+          <div class="buttons flex justify-end gap-2 mt-8">
+
+            <button type="button" class="rounded-md px-2 py-px bg-linear-to-r from-red-500 to-red-600 text-white cursor-pointer duration-150 focus:ring-4 ">انصراف</button>
+            <button type="button" class="rounded-md px-2 py-px bg-linear-to-r from-emerald-500 to-emerald-700 text-white cursor-pointer duration-150 focus:ring-4 ">تائید و ادامه</button>
+
+          </div>
+
+        </form>
+
+      </section>
+
+      <section class="sidebar lg:col-span-2 px-6 mt-8 lg:mt-0">
+
+        <div class="about">
+
+          <h1 class="text-xl text-violet-950">
+            سامانه مسافرتی
+            <span class="font-bold"> -مسیر سبز- </span>
+          </h1>
+
+          <p class="sidebar-caption">
+            سامانه مسافرتی مسیر سبز یک شرکت مستقل و نوآور در زمینه ارائه خدمات
+            مسافرتی و گردشگری است. این سامانه با هدف تسهیل و بهینه‌سازی
+            فرآیندهای مرتبط با سفرهای داخلی و خارجی طراحی شده و تلاش دارد با
+            ارائه خدماتی جامع و متنوع، تجربه‌ای بی‌نظیر و راحت برای مسافران
+            فراهم کند.
+          </p>
+
+        </div>
+
+        <div class="img">
+
+          <img src="./Assets/Images/travel.png" alt="">
+
+        </div>
+
+      </section>
+      
+    </main>
+    
+  </div>
+
+ <!-- JS -->
+ <script>
+
+  const userNameInput = document.querySelector("#username");
+  const phoneInput = document.querySelector("#phone");
+  const emailInput = document.querySelector("#email");
+  const inputValidationMessage = document.createElement("span");
+  const phoneInputValidationMessage = document.createElement("span");
+  const emailInputValidationMessage = document.createElement("span");
+  const creatOptionElement = document.createElement("option");
+  const optionElements = document.querySelectorAll("#province option");
+  const province = document.querySelector("#province");
+  let provinceItemsValue = [];
+  const provinceCities = document.querySelector("#province-cities");
+
+  userNameInput.after(inputValidationMessage);
+  phoneInput.after(phoneInputValidationMessage);
+  emailInput.after(emailInputValidationMessage);
+
+
+  function validationUserName(username) {
+
+    if (username.length >= 3) {
+
+      inputValidationMessage.textContent = "نام کاربری صحیح می باشد.";
+      inputValidationMessage.className = "text-teal-600 text-sm";
+
+    }else if (username === "") {
+
+      inputValidationMessage.textContent = "نام کاربری نمی تواند خالی باشد";
+      inputValidationMessage.className = "text-red-600 text-sm";
+    
+    }else {
+
+      inputValidationMessage.textContent = "نام کاربری نمی تواند کمتر از 3 کاراکتر باشد";
+      inputValidationMessage.className = "text-red-600 text-sm";
+
+    }
+
+  }
+
+   function validationUserPhone(userphone) {
+
+    userphone = userphone.replace("+98", "0");
+    userphone = userphone.replace("98", "0");
+
+    const phoneRegex = /^09\d{9}$/;
+
+    if (userphone === "") {
+
+      phoneInputValidationMessage.classList.remove("hidden");
+      phoneInputValidationMessage.textContent = "شماره تلفن نمی تواند خالی باشد";
+      phoneInputValidationMessage.className = "text-red-600 text-sm";
+
+    }else if (!phoneRegex.test(userphone)) {
+
+      phoneInputValidationMessage.textContent = "شماره موبایل معتبر نیست";
+      phoneInputValidationMessage.classList.remove("hidden");
+      phoneInputValidationMessage.className = "text-red-600 text-sm";
+    
+    }else {
+
+      phoneInputValidationMessage.textContent = "شماره موبایل معتبر است";
+      phoneInputValidationMessage.classList.remove("hidden");
+      phoneInputValidationMessage.className = "text-teal-600 text-sm ";
+
+    }
+
+  }
+
+  function validationUserEmail(useremail) {
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (useremail === "") {
+
+      emailInputValidationMessage.classList.remove("hidden");
+      emailInputValidationMessage.textContent = "ایمیل نمی تواند خالی باشد";
+      emailInputValidationMessage.className = "text-red-600 text-sm";
+
+    }else if (!emailRegex.test(useremail)) {
+
+      emailInputValidationMessage.textContent = " ایمیل معتبر نیست";
+      emailInputValidationMessage.classList.remove("hidden");
+      emailInputValidationMessage.className = "text-red-600 text-sm";
+    
+    }else {
+
+      emailInputValidationMessage.textContent = " ایمیل معتبر است";
+      emailInputValidationMessage.classList.remove("hidden");
+      emailInputValidationMessage.className = "text-teal-600 text-sm ";
+
+    }
+
+  }
+
+  function provinceCitiesSelect() {
+
+    const selectedProvince = province.value;
+
+    provinceCities.innerHTML = "";
+
+    if (selectedProvince === "آذربایجان شرقی") {
+
+      const cities = ["تبریز", "اسکو", "مرند", "مراغه", "شبستر"];
+
+      cities.forEach(city => {
+
+        const createCity = document.createElement("option");
+        createCity.value = city;
+        createCity.textContent = city;
+
+        provinceCities.append(createCity);
+
+      });
+
+    }
+
+    if (selectedProvince === "تهران") {
+
+      const cities = ["تهران", "اسلام شهر", "کرج", "شهریار"];
+
+      cities.forEach(city => {
+
+        const createCity = document.createElement("option");
+        createCity.value = city;
+        createCity.textContent = city;
+
+        provinceCities.append(createCity);
+
+      });
+
+    }
+
+    if (selectedProvince === "مشهد") {
+
+      const cities = ["مشهد", "گناباد", "تربت جام", "نیشابور"];
+
+      cities.forEach(city => {
+
+        const createCity = document.createElement("option");
+        createCity.value = city;
+        createCity.textContent = city;
+
+        provinceCities.append(createCity);
+
+      });
+
+    }
+
+    if (selectedProvince === "فارس") {
+
+      const cities = ["شیراز", "مرودشت", "لار"];
+
+      cities.forEach(city => {
+
+        const createCity = document.createElement("option");
+        createCity.value = city;
+        createCity.textContent = city;
+
+        provinceCities.append(createCity);
+
+      });
+
+    }
+
+}
+
+
+
+  userNameInput.addEventListener("keyup", () => {
+    validationUserName(userNameInput.value.trim());
+  });
+  userNameInput.addEventListener("blur", () => {
+    validationUserName(userNameInput.value.trim());
+  });
+
+  phoneInput.addEventListener("keyup", () => {
+    validationUserPhone(phoneInput.value.trim());
+  });
+  phoneInput.addEventListener("blur", () => {
+    validationUserPhone(phoneInput.value.trim());
+  });
+
+  emailInput.addEventListener("keyup", () => {
+    validationUserEmail(emailInput.value.trim());
+  });
+  emailInput.addEventListener("blur", () => {
+    validationUserEmail(emailInput.value.trim());
+  });
+
+
+  province.addEventListener("change", provinceCitiesSelect)
+
+ </script>
+
+</body>
+</html>

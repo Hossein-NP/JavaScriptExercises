@@ -1,3 +1,4 @@
+
 @import "tailwindcss";
 
 @layer base {
@@ -26,6 +27,20 @@
     font-display: swap;
   }
 
+  @font-face {
+    font-family: "Vazir";
+    src: url("../Assets/fonts/vazir-font-v16.1.0/Vazir.woff2") format("woff2");
+    font-style: normal;
+    font-display: swap;
+  }
+
+    @font-face {
+    font-family: "Vazir";
+    src: url("../Assets/fonts/vazir-font-v16.1.0/Vazir.woff") format("woff");
+    font-style: normal;
+    font-display: swap;
+  }
+
 
   * {
     line-height: 2;
@@ -40,6 +55,7 @@
   --color-black-80: #575757;
   --color-black-100: #242424;
   --font-yekan: "YekanBakh", sans-serif;
+  --font-vazir: "Vazir";
 
 }
 
@@ -69,6 +85,74 @@
 
   .input-message__invalid {
     @apply text-red-600 text-xs font-medium;
+  }
+
+  
+
+  /* .workflow-list {
+    @apply relative flex items-center gap-4 after:content-[""] after:absolute after:h-px after:left-8 after:right-0 after:top-1/2 after:bg-gray-500;
+  }
+
+  .workflow-list:last-child {
+    @apply after:hidden;
+  } */
+
+  /* OR  */
+  .workflow-list {
+    @apply relative flex items-center flex-1 gap-3;
+  }
+
+  .workflow-list:not(:last-child)::after {
+    content: "";
+    @apply flex-1 h-px bg-gray-500 
+  }
+
+  .workflow-number {
+    @apply  w-6 h-6 bg-gray-500 text-white rounded-full flex items-center justify-center text-sm;
+  }
+
+  .personal-information input {
+    @apply border border-gray-300 outline-0 rounded-md p-2 text-violet-800 transition-all;
+  }
+
+  .personal-information input::placeholder {
+    @apply text-gray-500 text-sm;
+  }
+
+  .personal-information input:focus {
+    @apply ring-2 ring-violet-700;
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline-offset: 2px;
+    transition-duration: 150ms;
+    @apply w-full focus:ring-2 focus:ring-violet-700 outline-0 border border-gray-300  rounded-md appearance-none font-yekan p-2;
+  }
+
+  select > option {
+    @apply font-yekan;
+  }
+
+  .triangle-down{
+    width:0;
+    height:0;
+    border-left:6px solid transparent;
+    border-right:6px solid transparent;
+    border-top:8px solid var(--color-gray-400);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+}
+
+@layer utilities {
+
+  .container {
+    margin-inline:  auto;
   }
 
 }
